@@ -1,6 +1,6 @@
 # Synthetic Biology-Based Wearable Patch for Non-Invasive Volatile Organic Compound Detection in Diabetes Mellitus
 
-**MIT Media Lab — How to Grow (Almost) Anything 2025**  
+**MIT Media Lab- How to Grow (Almost) Anything 2025**  
 **Individual Final Project | Yash Sawant**
 
 ---
@@ -30,7 +30,7 @@ The central hypothesis is that acetone, like conventional small-molecule inducer
 
 ### Diabetes and Diabetic Ketoacidosis
 
-Diabetes mellitus is a chronic metabolic disorder caused by insufficient insulin production or impaired insulin utilisation. Hyperglycemia, if left untreated, leads to catastrophic damage to neurological and vascular systems. In insulin-deficient states, the body shifts to fatty acid catabolism, producing ketone bodies — including acetone, acetoacetate, and beta-hydroxybutyrate — at elevated concentrations. Diabetic ketoacidosis (DKA) occurs when ketone accumulation leads to systemic acidosis, a potentially fatal condition.
+Diabetes mellitus is a chronic metabolic disorder caused by insufficient insulin production or impaired insulin utilisation. Hyperglycemia, if left untreated, leads to catastrophic damage to neurological and vascular systems. In insulin-deficient states, the body shifts to fatty acid catabolism, producing ketone bodies- including acetone, acetoacetate, and beta-hydroxybutyrate- at elevated concentrations. Diabetic ketoacidosis (DKA) occurs when ketone accumulation leads to systemic acidosis, a potentially fatal condition.
 
 Acetone is a volatile organic compound (VOC) emitted passively through breath and sweat, and its concentration correlates directly with blood beta-hydroxybutyrate levels in diabetic patients (Yamane et al., 2006). This makes it a viable non-invasive biomarker for DKA detection.
 
@@ -53,7 +53,7 @@ Current non-invasive approaches suffer from low sensitivity to trace biomarkers,
 
 ## Project Aims
 
-### Aim 1 — Computational Design and Validation
+### Aim 1- Computational Design and Validation
 Develop a synthetic biology gene circuit that detects acetone VOCs from sweat using an aptamer-based riboswitch. Validate computationally using docking simulations, RNAfold structural analysis, and PyMOL visualisation.
 
 **Workflow:**
@@ -64,7 +64,7 @@ Develop a synthetic biology gene circuit that detects acetone VOCs from sweat us
 5. Run docking simulations (acetone + aptamer) using SwissDock/AutoDock Vina
 6. Analyse binding pockets, conformational changes using PyMOL and RNAfold
 
-### Aim 2 — Experimental Validation and Optimisation
+### Aim 2- Experimental Validation and Optimisation
 Experimentally confirm acetone binding affinity and validate the predicted conformational change in the riboswitch. Overcome limitations related to small molecule affinity and sensitivity.
 
 **Protocol:**
@@ -83,12 +83,12 @@ Experimentally confirm acetone binding affinity and validate the predicted confo
 | EMSA | Structural shifts upon ligand binding |
 | SHAPE / In-line probing | Mapping of structural flexibility changes |
 
-### Aim 3 — Wearable Integration and Real-Time Monitoring
+### Aim 3- Wearable Integration and Real-Time Monitoring
 
-**Aim 3.1 — Scalability**
+**Aim 3.1- Scalability**
 Optimise for mass production, standardisation, safety, and cost-effectiveness to maximise societal impact across socioeconomic demographics.
 
-**Aim 3.2 — Smartphone Interface**
+**Aim 3.2- Smartphone Interface**
 Integrate the biosensor into a textile patch coupled to a smartphone interface for real-time VOC monitoring.
 
 Hardware components required:
@@ -102,10 +102,10 @@ Hardware components required:
 
 ## Experimental Design
 
-### Step 1 — Ligand and Aptamer Selection
+### Step 1- Ligand and Aptamer Selection
 
 - **Target ligand:** Acetone (SMILES: `CC(=O)C`)
-- **Aptamer scaffold:** Yeast tRNA phenylalanine (*Saccharomyces cerevisiae*, PDB: 1ehz) — selected for structural stability as an RNA scaffold
+- **Aptamer scaffold:** Yeast tRNA phenylalanine (*Saccharomyces cerevisiae*, PDB: 1ehz)- selected for structural stability as an RNA scaffold
 
 Acetone molecular structure (MOL2 format):
 ```
@@ -114,14 +114,14 @@ Bond: C2=O1 (double bond, carbonyl)
 Partial charges: C2 (+0.1284), O1 (-0.3021)
 ```
 
-### Step 2 — Structural Visualisation in PyMOL
+### Step 2- Structural Visualisation in PyMOL
 
 Structures visualised:
-- Yeast tRNA phenylalanine (PDB: 1ehz) — showing anticodon stem, D-stem, T-stem, and four-way junction
+- Yeast tRNA phenylalanine (PDB: 1ehz)- showing anticodon stem, D-stem, T-stem, and four-way junction
 - Acetone molecule in PDB format for docking
 - Potential binding pockets on tRNA surface identified using PyMOL cavity detection
 
-### Step 3 — Aptamer Sequence Extraction
+### Step 3- Aptamer Sequence Extraction
 
 Observed residues at potential binding region (extracted via PyMOL):
 
@@ -134,7 +134,7 @@ Derived aptamer sequence for Benchling riboswitch design:
 5'-TTTGTAGAGTCTTAA-3'
 ```
 
-### Step 4 — Riboswitch Design in Benchling
+### Step 4- Riboswitch Design in Benchling
 
 Full Benchling construct sequence (788 bp):
 ```
@@ -147,13 +147,13 @@ Circuit logic:
 
 Benchling sequence: [View circuit design](https://benchling.com/s/seq-7bCvdBNVNhtjbsfa8DGx?m=slm-jmkLTfTcrH412Xh4kimf)
 
-### Step 5 — Molecular Docking (SwissDock / AutoDock Vina)
+### Step 5- Molecular Docking (SwissDock / AutoDock Vina)
 
 **Receptor:** Yeast tRNA phenylalanine (PDB: 1ehz)  
 **Ligand:** Acetone (converted to PDB format from SMILES)  
 **Software:** SwissDock (AutoDock Vina backend)
 
-### Step 6 — RNAfold Structural Analysis
+### Step 6- RNAfold Structural Analysis
 
 Used RNAfold (Vienna RNA package) to:
 - Predict minimum free energy (MFE) secondary structures with and without acetone
@@ -191,7 +191,7 @@ While modest, this binding energy is consistent with expected affinities for sma
 | Without Acetone | -276.40 | Stable, well-folded conformation; RBS sequestered; low positional entropy |
 | With Acetone | -253.61 | Partial unfolding of aptamer domain; RBS exposed; increased positional entropy |
 
-**MFE shift: +22.79 kcal/mol** upon acetone binding — reflects destabilisation of the aptamer fold consistent with RBS exposure and translational activation.
+**MFE shift: +22.79 kcal/mol** upon acetone binding- reflects destabilisation of the aptamer fold consistent with RBS exposure and translational activation.
 
 **Key observations:**
 - Positional entropy increased significantly around the aptamer domain upon acetone binding
@@ -207,28 +207,28 @@ While modest, this binding energy is consistent with expected affinities for sma
 
 Docking simulations confirm acetone interaction with the aptamer scaffold at a defined binding pocket. The best binding energy of -2.428 kcal/mol, while lower than typical protein-small molecule interactions, is appropriate for a small VOC (MW = 58.08 g/mol) interacting with an RNA structure.
 
-RNAfold analysis strongly supports the riboswitch design logic. The MFE shift from -276.40 to -253.61 kcal/mol upon acetone binding reflects structural loosening of the aptamer, with increased entropy at the RBS site — consistent with translational derepression.
+RNAfold analysis strongly supports the riboswitch design logic. The MFE shift from -276.40 to -253.61 kcal/mol upon acetone binding reflects structural loosening of the aptamer, with increased entropy at the RBS site- consistent with translational derepression.
 
 ### Limitations
 
-1. **Acetone binding affinity** — Small molecular size and low polarity make high-affinity aptamer binding inherently challenging. Modified binding pockets or signal amplification strategies may be required.
-2. **In silico vs in vitro discrepancy** — Environmental factors (hydration, molecular crowding, ionic strength) not captured in computational models may alter real binding behaviour.
-3. **Aptamer specificity** — Selectivity for acetone over structurally similar VOCs (e.g., ethanol, isopropanol) requires experimental validation.
-4. **tRNA scaffold** — Using tRNA phenylalanine as an aptamer scaffold is a simplification; a SELEX-derived aptamer specific to acetone would be more appropriate for experimental follow-up.
+1. **Acetone binding affinity**- Small molecular size and low polarity make high-affinity aptamer binding inherently challenging. Modified binding pockets or signal amplification strategies may be required.
+2. **In silico vs in vitro discrepancy**- Environmental factors (hydration, molecular crowding, ionic strength) not captured in computational models may alter real binding behaviour.
+3. **Aptamer specificity**- Selectivity for acetone over structurally similar VOCs (e.g., ethanol, isopropanol) requires experimental validation.
+4. **tRNA scaffold**- Using tRNA phenylalanine as an aptamer scaffold is a simplification; a SELEX-derived aptamer specific to acetone would be more appropriate for experimental follow-up.
 
 ### Significance
 
-If the computational predictions hold experimentally, this system would represent the first riboswitch-based wearable biosensor for acetone VOC detection — advancing both synthetic biology applications in diagnostics and non-invasive diabetes monitoring.
+If the computational predictions hold experimentally, this system would represent the first riboswitch-based wearable biosensor for acetone VOC detection- advancing both synthetic biology applications in diagnostics and non-invasive diabetes monitoring.
 
 ---
 
 ## Future Work
 
-1. **Aptamer optimisation** — SELEX rounds in sweat-like conditions to identify higher-affinity acetone-binding sequences
-2. **Experimental validation** — Cell-free TX-TL system with GFP reporter to confirm riboswitch functionality
-3. **Aptamer engineering** — Systematic mutagenesis around the binding region with functional screening
-4. **Wearable integration** — Embedding sensor in textile patch with BLE microcontroller and smartphone interface
-5. **Clinical validation** — Mock trials with lab models and human volunteers for standardisation
+1. **Aptamer optimisation**- SELEX rounds in sweat-like conditions to identify higher-affinity acetone-binding sequences
+2. **Experimental validation**- Cell-free TX-TL system with GFP reporter to confirm riboswitch functionality
+3. **Aptamer engineering**- Systematic mutagenesis around the binding region with functional screening
+4. **Wearable integration**- Embedding sensor in textile patch with BLE microcontroller and smartphone interface
+5. **Clinical validation**- Mock trials with lab models and human volunteers for standardisation
 
 ---
 
